@@ -1,0 +1,64 @@
+background yes
+override_utf8_locale yes
+use_xft yes
+xftfont Open Sans:size=10
+xftalpha 1
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+#own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 400
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+default_color FFFFFF
+default_shade_color 000000
+default_outline_color 828282
+alignment top_right
+gap_x 12
+gap_y 28
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+##############################################
+#  Output
+##############################################
+
+TEXT
+
+${font Raleway:weight=Light :size=62}${time %H:%M}${font}
+
+${voffset 2}${alignc}${time %A, %d %B %Y}
+
+SYSTEM 
+${hr}
+${voffset 2}${font Arial Black:style=Bold:size=12}#!${font}   CrunchBang Linux  ${alignr}08.10.01
+${font StyleBats:size=16}${font} CPU:   ${cpu cpu0}% ${alignr}${cpubar cpu1 8,60}
+${font StyleBats:size=16}${font} RAM:   $mem/$memmax ${alignr}${membar 8,60}
+${font StyleBats:size=16}${font} SWAP:  $swap/$swapmax ${alignr}${swapbar 8,60}
+${font StyleBats:size=16}${font} UPTIME: ${alignr}${uptime}
+#TOP CPU 
+#${hr}
+#${top name 1}${alignr}${top cpu 1} %
+#${top name 2}${alignr}${top cpu 2} %
+#${top name 3}${alignr}${top cpu 3} %
+#TOP MEMORY 
+#${hr}
+#${top_mem name 1}${alignr}${top mem 1} %
+#${top_mem name 2}${alignr}${top mem 2} %
+#${top_mem name 3}${alignr}${top mem 3} %
+${hr}
+IP: $alignr ${addr wlan0}
+ESSID: $alignr ${wireless_essid wlanli0}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0 99cc33 006600}
+DLS:${downspeed wlan0} kb/s $alignr total: ${totaldown wlan0}
+${upspeedgraph wlan0  ffcc00 ff0000}
+ULS:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
